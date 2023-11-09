@@ -11,5 +11,6 @@ router.register('proprietarios', ProprietarioViewSet, basename='Proprietarios')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('proprietario/<int:pk>/motos', ListaMotosProprietario.as_view()),
+    path('proprietario/<int:pk>/agendamentos', ListaAgendamentosProprietario.as_view()),
     ]
-

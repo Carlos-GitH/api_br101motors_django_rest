@@ -7,6 +7,7 @@ class MotosAdmin(admin.ModelAdmin):
     list_display_links = ('placa',)
     search_fields      = ('moto', 'proprietario_id', 'placa')
     list_per_page      = 20
+    ordering           = ('marca', 'modelo')
     
 admin.site.register(Motos, MotosAdmin)
 
@@ -15,6 +16,7 @@ class Proprietarios(admin.ModelAdmin):
     list_display_links = ('id', 'nome')
     search_fields      = ('nome', 'email', 'placa')
     list_per_page      = 20
+    ordering           = ('nome',)
     
 admin.site.register(Proprietario, Proprietarios)
 
@@ -23,5 +25,6 @@ class Agendamentos(admin.ModelAdmin):
     list_display_links = ('data', 'servicos', 'status', 'moto_id',)
     search_fields      = ('proprietario_id', 'moto_id')
     list_per_page      = 20
+    ordering           = ('data',)
     
 admin.site.register(Agendamento, Agendamentos)
